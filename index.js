@@ -47,6 +47,17 @@ app.get("/ratings", async (req, res) => {
   res.render("ratings.ejs", { ratings });
 });
 
+app.get("/delete", async (req, res) => {
+  const ratings = await Rating.find({}).sort({ createdAt: -1 });
+  res.render("deleterate.ejs", { ratings });
+});
+
+app.get("/update", async (req, res) => {
+  const teachers = await Rating.find({}).sort({ createdAt: -1 });
+  res.render("updateteach.ejs", { teachers });
+});
+
+
 app.post("/add/rating", async (req, res) => {
   const newRating = await new Rating({
     username: req.body.username,
@@ -65,6 +76,21 @@ app.post("/add/teacher", async (req, res) => {
   }).save();
 
   res.json(newTeacher);
+});
+app.patch("/update/teacher", async (req, res) => {
+  const updatedItem = await Teacher.findOneAndUpdate(
+    { department: req.params.department },
+    { name: res.body.name },
+  );
+  res.json(updatedItem);
+})
+
+
+app.delete("/delete/rating/:username", async (req, res) => {
+  const deletedItem = await Menu.findOne({
+    username: req.params.username,
+  });
+  res.json(deletedItem);
 });
 
 // Add your SRV string, make sure that the database is called CSHteachers

@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ratings</title>
+  <title>Delete Ratings</title>
   <!-- Link to the correct css file -->
   <link rel="stylesheet" href="ratings.css" />
   <!-- Link to the correct js file -->
-  <script src="ratingScript.js" defer></script>
+  <script src="delete.js" defer></script>
 </head>
 <body>
   <nav class="navbar">
@@ -25,10 +25,9 @@
   </nav>
 
   <div class="container">
-    <h1>CSH Teacher Comments & Ratings</h1>
+    <h1> Delete Ratings</h1>
 
     <div class="form-section">
-      <h2>Leave a Comment</h2>
 
       <!-- Create a form below that matches the Ratings schema -->
       <!-- Inside of the input tag for rating add the attributes min="1" max="5" -->
@@ -36,21 +35,12 @@
       <form>
         <label for="username">Username: </label><br>
         <input type="text" name="username"> <br>
-        
-        <label for="teacher">Teacher: </label><br>
-        <input type="text" name="teacher"> <br>
-        
-        <label for="comment">Comment: </label><br>
-        <input type="text" name="comment"> <br>
-        
-        <label for="rating">Rating: </label><br>
-        <input type="number" name="rating" min="1" max="5"> <br>
-        
+           
         <button type="submit">Submit</button>
         </form>
     </div>
 
-    <div class="teachers-grid">
+    <!-- <div class="teachers-grid">
       <% for (let i = 0; i < ratings.length; i++) { 
           const rating = ratings[i]; %>
         <div class="teacher-card">
@@ -72,4 +62,4 @@
     </div>
   </div>
 </body>
-</html>
+</html> -->
